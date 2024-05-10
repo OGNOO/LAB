@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login&Registration</title>
+    <link rel="stylesheet" type="text/css" href="Login&Registration.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="box signin">
+        <h2>이미 계정이 있습니까?</h2>
+        <button class="signinBtn">로그인</button>
+      </div>
+      <div class="box singnup">
+        <h2>등록된 계정이 없습니까?</h2>
+        <button class="signupBtn">회원가입</button>
+      </div>
+      <div class="formBx">
+        <div class="form signinform">
+          <form>
+            <h3>로그인</h3>
+            <input type="text" placeholder="아이디를 입력해 주세요" />
+            <input type="password" placeholder="비밀번호를 입력해 주세요" />
+            <input type="submit" value="로그인" />
+            <div class="find">
+              <a href="#" class="forgot">아이디 찾기</a>
+              <a href="#" class="forgot">비밀번호 찾기</a>
+            </div>
+          </form>
+        </div>
+        <div class="form signupform">
+          <form>
+            <h3>회원가입</h3>
+            <input type="text" placeholder="이름을 입력해 주세요" />
+            <input type="text" placeholder="전화번호를 입력해 주세요" />
+            <input type="text" placeholder="아이디를 입력해 주세요" />
+            <input type="email" placeholder="이메일 주소를 입력해 주세요" />
+            <input type="password" placeholder="비밀번호를 입력해 주세요" />
+            <input type="password" placeholder="비밀번호를 재입력해 주세요" />
+            <input type="submit" value="회원가입" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      const signinBtn = document.querySelector(".signinBtn");
+      const signupBtn = document.querySelector(".signupBtn");
+      const body = document.querySelector("body");
+
+      signupBtn.onclick = function () {
+        body.classList.add("slide");
+      };
+      signinBtn.onclick = function () {
+        body.classList.remove("slide");
+      };
+    </script>
+  </body>
+</html>
