@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <link rel="stylesheet" type="text/css" href="ImageGallery.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <span style="--i: 1">
+          <img
+            src="https://fastly.picsum.photos/id/865/250/250.jpg?hmac=1J374SW0YN51qjfTuqMOPIUiBL1Nnnve5QE5MI5NBB4"
+          />
+        </span>
+        <span style="--i: 2">
+          <img
+            src="https://fastly.picsum.photos/id/403/250/250.jpg?hmac=KxZuP9j3VT9a--IsyDAgBvno0TC_pIs8kF4z1a09BwM"
+          />
+        </span>
+        <span style="--i: 3">
+          <img
+            src="https://fastly.picsum.photos/id/6/250/250.jpg?hmac=K97_-kF7Rw2VoofnQGeSjM6-UQbnDjpieX2DnMhfPYw"
+          />
+        </span>
+        <span style="--i: 4">
+          <img
+            src="https://fastly.picsum.photos/id/345/250/250.jpg?hmac=91olYLgMTO0YonvKWr-g2imjacgr94jJSr0yNdd43PY"
+          />
+        </span>
+        <span style="--i: 5">
+          <img
+            src="https://fastly.picsum.photos/id/650/250/250.jpg?hmac=b-sQj85QYscXFa4H0QMpXO3MZSqr1Sxjn_ZAMLMdds8"
+          />
+        </span>
+        <span style="--i: 6">
+          <img
+            src="https://fastly.picsum.photos/id/161/250/250.jpg?hmac=rzjOPjaHcK2HBshVkqjc-JdWVkhjDCHOOrrSQfXjhOg"
+          />
+        </span>
+        <span style="--i: 7">
+          <img
+            src="https://fastly.picsum.photos/id/743/250/250.jpg?hmac=7q2UOu_iiaMPdyvOO9GybB1iXK5a_PeOqE3X1PRk3a0"
+          />
+        </span>
+        <span style="--i: 8">
+          <img
+            src="https://fastly.picsum.photos/id/183/250/250.jpg?hmac=7EBRoHK5JoetavOqWnoN9KKT2hlrVozE2bwQJosPriQ"
+          />
+        </span>
+      </div>
+      <div class="btns">
+        <div class="btn prev"></div>
+        <div class="btn next"></div>
+      </div>
+    </div>
+    <script>
+      let prev = document.querySelector(".prev");
+      let next = document.querySelector(".next");
+      let box = document.querySelector(".box");
+
+      let degrees = 0;
+
+      prev.addEventListener("click", function () {
+        degrees += 45;
+        box.style = `transform: perspective(1000px) rotateY(${degrees}deg)`;
+      });
+      next.addEventListener("click", function () {
+        degrees -= 45;
+        box.style = `transform: perspective(1000px) rotateY(${degrees}deg)`;
+      });
+    </script>
+  </body>
+</html>
