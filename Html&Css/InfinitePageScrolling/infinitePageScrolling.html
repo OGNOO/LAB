@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infinite Page Scrolling</title>
+    <link rel="stylesheet" href="infinitePageScrolling.css" />
+  </head>
+  <body>
+    <div id="container"></div>
+  </body>
+  <script>
+    let currentPage = 1;
+    function loadImage() {
+      let image = Array.from({ length: 24 }, (_, index) => {
+        return `<img src=".\\image\\img${index + 1}.jpg" alt="">`;
+      });
+      let container = document.getElementById("container");
+      container.innerHTML += image.join("");
+    }
+    loadImage();
+    // 여기서 부턴 무한 스크롤
+    window.addEventListener("scroll", function () {
+      let { scrollTop, clientHeight, scrollHeight } = document.documentElement;
+      if (scrollTop + clientHeight >= scrollHeight) {
+        currentPage++;
+        loadImage();
+      }
+    });
+  </script>
+</html>
